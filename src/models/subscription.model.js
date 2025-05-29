@@ -8,7 +8,7 @@ const subscriptionSchema = new Schema({
     },
     planId:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Pkan",
+        ref: "Plan",
         required: true
     },
     status: {
