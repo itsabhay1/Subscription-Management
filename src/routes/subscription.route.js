@@ -7,7 +7,7 @@ const router = Router();
 router.use(auth);
 
 router.route("/").post(createSubscription);
-router.route("/me").get(getSubscription);
+router.route("/:id").get(getSubscription);
 router.route("/:id").put(updateSubscription);
 router.route("/:id").delete(cancelSubscription);
 

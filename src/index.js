@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
 import startSubscriber from "./redis/subscriber.redis.js";
+import checkAndExpireSubscriptions from "./utils/subscriptionExpiry.js";
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ connectDB()
     })
 
     startSubscriber();
+    checkAndExpireSubscriptions();
 })
 .catch((err) => {
     console.log("MONGODB CONNECTION FAILED !!",err);
